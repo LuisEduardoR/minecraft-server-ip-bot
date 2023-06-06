@@ -33,7 +33,7 @@ class IpService {
     }
     
     async sendIpToChannel(interaction) {
-        getIp((ip) => {
+        this.getIp((ip) => {
             if(ip) {
                 this.storeLastIp(ip);
                 console.log('Replying with IP...');
