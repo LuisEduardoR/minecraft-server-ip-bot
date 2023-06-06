@@ -50,11 +50,13 @@ class IpService {
     
         if(firstRun) {
             console.log(`Running for the first time! Server IP = ${ip}`);
-            message = `Hello! I just woke up! The server IP is ${ip}.`;
+            message = `I just woke up! The server IP is ${ip}.`;
         } else {
             console.log(`The server IP has changed ${this.lastIp} -> ${ip}`);
-            message = `Hi, the server IP has changed! It is now ${ip}. Remember to update it before trying to connect!`;
+            message = `The server IP has changed! It is now ${ip}. Remember to update it before trying to connect!`;
         }
+
+        this.storeLastIp(ip);
         
         channel_names.forEach(channel_name => {
             var channel = this.client.channels.cache.find(channel => channel.name === channel_name);
@@ -62,8 +64,6 @@ class IpService {
                 channel.send({content: message});
             }
         });
-    
-        this.lastIp = ip;
     }
     
     handleIpCommand(interaction) {
@@ -80,8 +80,8 @@ class IpService {
         console.log('Checking for IP changes...');
         this.getIp((ip) => {
             if(ip) {
-                var firstRun = (!this.lastIp);
                 if(ip !== this.lastIp) {
+                    var firstRun = (this.lastIp === undefined);
                     this.notifyIpToChannels(this.settings.whitelist, ip, firstRun);
                 } else {
                     console.log('Server IP has not changed!');
@@ -95,7 +95,7 @@ class IpService {
     
     setupPeriodicIpCheck() {
         setInterval(() => {
-            checkForIpChanges();
+            this.checkForIpChanges();
         }, this.settings.checkPeriod);
     }
 }
