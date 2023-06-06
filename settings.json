@@ -1,0 +1,9 @@
+{
+    "guildId":"your-server-id-here",
+    "clientId":"your-bots-client-id-here",
+    "token":"your-bots-token-here", 
+    "whitelist":[
+        "add-the-channels-you-want-the-bot-to-send-ips-here"
+    ],
+    "checkPeriod":300000.0
+}

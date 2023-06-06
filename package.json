@@ -1,0 +1,17 @@
+{
+  "name": "minecraft-server-ip-bot",
+  "version": "0.3.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "register": "node src/register_commands.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "fs": "^0.0.1-security"
+  }
+}
