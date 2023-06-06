@@ -1,3 +1,6 @@
+# Settings.json (gurantees that the token is not accidentally commited)
+settings.json
+
 # Logs
 logs
 *.log
