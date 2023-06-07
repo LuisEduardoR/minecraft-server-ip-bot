@@ -1,4 +1,4 @@
-# Minecraft Server IP Bot
+# Server IP Bot
 
 By Luis Eduardo Rozante
 - GitHub: [LuisEduardoR](https://github.com/LuisEduardoR)

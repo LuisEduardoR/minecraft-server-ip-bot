@@ -37,7 +37,7 @@ class IpService {
             if(ip) {
                 this.storeLastIp(ip);
                 console.log('Replying with IP...');
-                interaction.reply(`Hello! The Minecraft server IP is ${this.lastIp}`);
+                interaction.reply(`Hello! The server IP is ${this.lastIp}.`);
             } else {
                 console.log('Failed to get server IP!');
             }

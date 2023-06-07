@@ -1,5 +1,5 @@
 {
-  "name": "minecraft-server-ip-bot",
+  "name": "server-ip-bot",
   "version": "0.3.0",
   "description": "",
   "main": "src/index.js",
